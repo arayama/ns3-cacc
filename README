@@ -2,7 +2,57 @@ Cooperative Adaptive Cruise Control (CACC)
 -----------------------------------
 
 
-The CACC 
+The CACC application is implemented in ns3. The example application uses 802.11p helper functions. 
+
+The CACC  application can be run as shown: 
+The necessary scripts for simulation are placed in scratch folder and can be
+compiled by using
+$ ./waf
+To simulate the CACC application:
+The arguments are defined as shown:
+• RANDSEED = Random Seed set to the random number generator in ns-3
+• NumberofNodes = Total number of vehicles in the platoon to simulate starting
+with front vehicle 0
+• Datarate = bit rate for broadcast network in kbps
+• PacketSize = size of broadcast message to use (typically 200 B)
+128
+• SimTime = total length of time for simulation to run
+• Phymode = ns-3 specific defines that abstract the type of Modulation and
+Coding to be used in 802.11p network ( typically, Rate 1/2 QPSK is given as
+OfdmRate6MbpsBW10MHz)
+• PlatoonLength = number of vehicles starting from the front vehicle counted as 0
+to actually participate in a platoon ( usually PlatoonLength = NumberofNodes)
+• HeadwayTime = set h value in seconds
+• Accln Profile = type of acceleration profile to be used for the Leader vehicle
+(the acceleration profile files are named with ’.acc’ extension
+• Caccupdatetime = time span between consecutive CACC updates
+• Moveupdatetime = time span between consecutive piece wise linear acceleration
+updates used for vehicle mobility
+• Leaderupdatetime = time span between consecutive Leader vehicle’s acceleration
+updates
+• Dref = reference distance in feet.
+• ACC basic, CACC U, CACC A, CACC DU and CACC RU = selection on type
+of CACC (with wireless or without wireless and only using sensors) and ACC
+to simulate
+• DMEupdatetime = time span between consecutive Sensor updates
+• LogfileLocation = folder location to store all the log files generated per simulation
+129
+• LossStartTime = start time in seconds w.r.t the simulation start time when the
+loss process acting on the wireless network becomes active
+• LossDuration = length of time since the LossStartTime till the loss process is
+active
+• numLossVehicles = number of vehicles a↵ected by the loss process
+• MeanBurstLength = MBL for loss process simulation
+• MeanGoodLength = MGL for loss process simulation
+• BackupMode = fall back CACC mode to be used in case the wireless network
+drops packets
+• distnNoise = standard deviation used to simulate noise in distance measurements
+• velnoise = standard deviation used to simulate noise in velocity measurements
+After the simulation finishes, the log files will be stored in LogLocation. A set of
+different log files contain mobility information (acceleration, velocity, position) about
+each platooning vehicles, their communication logs ( received time, sent time, packet
+counter and RSSI in dBm), and CACC related logs (distance error, target acceleration).
+
 
 
 
