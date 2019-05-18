@@ -15,7 +15,6 @@ The arguments are defined as shown:
 with front vehicle 0
 • Datarate = bit rate for broadcast network in kbps
 • PacketSize = size of broadcast message to use (typically 200 B)
-128
 • SimTime = total length of time for simulation to run
 • Phymode = ns-3 specific defines that abstract the type of Modulation and
 Coding to be used in 802.11p network ( typically, Rate 1/2 QPSK is given as
@@ -36,7 +35,6 @@ of CACC (with wireless or without wireless and only using sensors) and ACC
 to simulate
 • DMEupdatetime = time span between consecutive Sensor updates
 • LogfileLocation = folder location to store all the log files generated per simulation
-129
 • LossStartTime = start time in seconds w.r.t the simulation start time when the
 loss process acting on the wireless network becomes active
 • LossDuration = length of time since the LossStartTime till the loss process is
