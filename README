@@ -3,11 +3,6 @@ Cooperative Adaptive Cruise Control (CACC)
 
 
 The CACC application is implemented in ns3. The example application uses 802.11p helper functions. 
-
-The CACC  application can be run as shown: 
-The necessary scripts for simulation are placed in scratch folder and can be
-compiled by using
-$ ./waf
 To simulate the CACC application:
 The arguments are defined as shown:
 • RANDSEED = Random Seed set to the random number generator in ns-3
